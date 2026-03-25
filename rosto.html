@@ -1,0 +1,64 @@
+<!DOCTYPE html> <!-- Login Facial - BRASFLIX -->
+<html lang="pt-BR"> <!-- Página de login com reconhecimento facial para a plataforma de streaming BRASFLIX -->
+<head> <!-- Configurações de metadados, título, ícone e links para estilos e scripts necessários para a funcionalidade de reconhecimento facial -->
+    <meta charset="UTF-8"><!-- Define a codificação de caracteres para UTF-8, garantindo suporte a caracteres acentuados e especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Configura a viewport para garantir que a página seja responsiva em dispositivos móveis -->
+    <title>Login Facial - BRASFLIX</title> <!-- Define o título da página que aparece na aba do navegador -->
+    <link rel="icon" type="image/png" href="imagens/logo.png"><!-- Define o ícone da página (favicon) usando a imagem do logo da BRASFLIX -->
+    <link rel="stylesheet" href="css/face.css"><!-- Link para o arquivo CSS específico para estilizar a página de login facial -->
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script><!-- Importa a biblioteca face-api.js de forma assíncrona para permitir o reconhecimento facial -->
+</head> <!-- Fim da seção head, início do corpo da página -->
+<body class="body-face"> <!-- Aplica a classe body-face para estilização específica do corpo da página de login facial -->
+
+    <main class="pagina-face"><!-- Elemento principal da página, com a classe pagina-face para estilização -->
+        <section class="face-container"> <!-- Seção que contém todos os elementos relacionados ao login facial, com a classe face-container para estilização -->
+
+            <img src="imagens/logo.png" alt="BRASFLIX" class="logo-face"><!-- Exibe o logo da BRASFLIX no topo da seção, com a classe logo-face para estilização -->
+
+            <h1>Login com reconhecimento facial</h1><!-- Título principal da seção, indicando a funcionalidade de login com reconhecimento facial -->
+
+            <p class="face-texto"> <!-- Parágrafo explicativo sobre o processo de login facial, com a classe face-texto para estilização -->
+                Posicione seu rosto dentro da moldura para cadastrar ou acessar sua conta com segurança.
+            </p> <!-- Fim do parágrafo explicativo -->
+
+            <div class="camera-box"> <!-- Contêiner para a câmera e elementos relacionados, com a classe camera-box para estilização -->
+                <video id="videoFace" autoplay muted playsinline></video><!-- Elemento de vídeo para exibir a câmera ao vivo, com o ID videoFace para manipulação via JavaScript -->
+                <canvas id="canvasFace"></canvas><!-- Elemento de canvas para desenhar a moldura e outros elementos gráficos, com o ID canvasFace para manipulação via JavaScript -->
+                <div class="moldura-rosto"></div><!-- Div para a moldura do rosto, com a classe moldura-rosto para estilização -->
+            </div><!-- Fim do contêiner da câmera -->
+
+            <div id="statusFace" class="status-face"><!-- Div para exibir o status do processo de login facial, com o ID statusFace para manipulação via JavaScript e a classe status-face para estilização -->
+                Aguardando ação.
+            </div> <!-- Fim da div de status -->
+
+            <div class="botoes-face"><!-- Contêiner para os botões de ação relacionados ao login facial, com a classe botoes-face para estilização -->
+                <button id="btnIniciarCamera" class="btn-face btn-primary"><!-- Botão para iniciar a câmera, com o ID btnIniciarCamera para manipulação via JavaScript e as classes btn-face e btn-primary para estilização -->
+                    📷 Iniciar Câmera
+                </button> <!-- Fim do botão de iniciar câmera -->
+                <button id="btnCadastrarFace" class="btn-face btn-success" style="display:none;"><!-- Botão para cadastrar o rosto, inicialmente oculto, com o ID btnCadastrarFace para manipulação via JavaScript e as classes btn-face e btn-success para estilização -->
+                    ✅ Cadastrar Rosto
+                </button> <!-- Fim do botão de cadastrar rosto -->
+                <button id="btnEntrarFace" class="btn-face btn-info" style="display:none;"><!-- Botão para entrar com o rosto, inicialmente oculto, com o ID btnEntrarFace para manipulação via JavaScript e as classes btn-face e btn-info para estilização -->
+                    🔓 Entrar com Rosto
+                </button><!-- Fim do botão de entrar com rosto -->
+            </div><!-- Fim do contêiner de botões -->
+
+            <div class="term-face" id="termosFaceWrap" style="display:none"><!-- Contêiner para os termos de consentimento relacionados ao armazenamento de dados biométricos, inicialmente oculto, com a classe term-face para estilização e o ID termosFaceWrap para manipulação via JavaScript -->
+                <label><!-- Rótulo para o checkbox de consentimento -->
+                    <input type="checkbox" id="aceitoTermosFace" /><!-- Checkbox para o usuário aceitar os termos, com o ID aceitoTermosFace para manipulação via JavaScript -->
+                    Estou de acordo com o armazenamento de dados biométricos (reconhecimento facial) e políticas de privacidade.
+                </label><!-- Fim do rótulo -->
+            </div> <!-- Fim do contêiner de termos de consentimento -->
+
+            <a href="login.html" class="voltar-login"><!-- Link para voltar à página de login tradicional, com a classe voltar-login para estilização -->
+                Voltar para o login
+            </a><!-- Fim do link de voltar para o login -->
+
+        </section><!-- Fim da seção face-container -->
+    </main> <!-- Fim do elemento principal pagina-face -->
+
+    <script type="module" src="js/face-auth.js"></script><!-- Importa o script JavaScript específico para a funcionalidade de autenticação facial, definido como módulo para permitir o uso de importações e exportações dentro do script -->
+
+
+</body><!-- Fim do corpo da página -->
+</html><!-- Fim do documento HTML -->
